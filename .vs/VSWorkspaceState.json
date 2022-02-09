@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\models"
+    "\\models",
+    "\\views"
   ],
+  "SelectedNode": "\\views\\views.xml",
   "PreviewInSolutionExplorer": false
 }
