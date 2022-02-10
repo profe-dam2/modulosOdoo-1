@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\models",
+    "\\security",
     "\\views"
   ],
-  "SelectedNode": "\\views\\views.xml",
+  "SelectedNode": "\\__manifest__.py",
   "PreviewInSolutionExplorer": false
 }

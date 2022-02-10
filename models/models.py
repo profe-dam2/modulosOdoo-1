@@ -34,11 +34,17 @@ class empleado(models.Model):
 	_description = 'Define los atributos de un empleado'
 
 	#atributos
-	dniEmpleado = fields.Char(string='DNI', required=True)
-	nombreEmpleado = fields.Char(string='Nombre', required=True)
-	fechaNacimiento = fields.Date(string='Fecha nacimiento', required=True, default = fields.date.today())
-	direccionEmpleado = fields.Char(string='Direccion', required=True)
-	telefonoEmpleado = fields.Char(string='Telefono')
+	dniEmpleado = fields.Char(string='DNI', requiered=True)
+    nombreEmpleado = fields.Char(string='Nombre', requiered=True)
+    fechaNacimiento = fields.Date(string='Fecha nacimiento', requiered=True, default = fields.date.today())
+    direccionEmpleado = fields.Char(string='Dirección', requiered=True)
+    telefonoEmpleado = fields.Char(string='Telefono', requiered=True)
+    edad = fields.Integer('Edad', compute='getEdad')
+
+    @api.depends('fechaNacimiento')
+    def getEdad(self):
+        for empleado in self:
+            empleado.edad = 0
 
 	#relacion entre tablas
 	departamento_id = fields.Many2one('proyectos.departamento', string='Empleados')
