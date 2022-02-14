@@ -80,8 +80,9 @@ class proyecto(models.Model):
 		for proyecto in self:
 			proyecto.fechaInicio
 			dias = relativedelta(hoy, proyecto.fechaInicio).days
-			if(dias < 0):
+			if(proyecto.fechaInicio < dias):
 				raise exceptions.ValidationError("La fecha no puede ser anterior a hoy")
+
 
 	#relacion entre tablas
 	empleado_id = fields.Many2many('proyectos.empleado', string='Empleados')
