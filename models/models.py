@@ -63,6 +63,12 @@ class empleado(models.Model):
 			if(empleado.edad < 18):
 				raise exceptions.ValidationError("La edad del empleado no puede ser menor de 18")
 
+	@api.constrains('telefonoEmpleado')
+	def _checkTelefono(self):
+		for empleado in self:
+			if(len(empleado.telefonoEmpleado) < 9):
+				raise exceptions.ValidationError("El telefono no puede tener menos de 9 numeros")
+
 	#relacion entre tablas
 	departamento_id = fields.Many2one('proyectos.departamento', string='Empleados')
 	proyecto_id = fields.Many2one('proyectos.proyecto', string='Proyectos')
