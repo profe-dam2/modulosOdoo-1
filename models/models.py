@@ -83,7 +83,7 @@ class proyecto(models.Model):
 			if(dias > 0):
 				raise exceptions.ValidationError("La fecha no puede ser anterior a hoy")
 
-	@api.constrains('fechaFin')
+	@api.depends('fechaFin')
 	def _checkFechaFin(self):
 		for proyecto in self:
 			if(proyecto.fechaFin < proyecto.fechaInicio):
