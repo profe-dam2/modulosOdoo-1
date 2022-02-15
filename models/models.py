@@ -87,7 +87,7 @@ class proyecto(models.Model):
 	def _checkFechaFin(self):
 		for proyecto in self:
 			if(proyecto.fechaFin < proyecto.fechaInicio):
-			raise exceptions.ValidationError("La fecha de finalizacion no puede ser anterior a la fecha de inicio")
+				raise exceptions.ValidationError("La fecha de finalizacion no puede ser anterior a la fecha de inicio")
 
 
 	#relacion entre tablas
