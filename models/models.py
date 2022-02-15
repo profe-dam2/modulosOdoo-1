@@ -57,6 +57,12 @@ class empleado(models.Model):
 			if(len(empleado.dniEmpleado) < 9):
 				raise exceptions.ValidationError("El DNI no puede tener menos de 9 caracteres")
 
+	@api.constrains('edad')
+	def _checkEdad(self):
+		for empleado in self:
+			if(empleado.edad < 18):
+				raise exceptions.ValidationError("La edad del empleado no puede ser menor de 18")
+
 	#relacion entre tablas
 	departamento_id = fields.Many2one('proyectos.departamento', string='Empleados')
 	proyecto_id = fields.Many2one('proyectos.proyecto', string='Proyectos')
