@@ -25,7 +25,7 @@ class almacenes(models.Model):
     _description = 'Define los atributos'
 
     #Atributos
-    codAlm = fields.Char(string='Codigo')
+    codAlm = fields.Char(string='Codigo', required=True)
     nombreAlm = fields.Char(string='Nombre del almacen')
     direccionAlm = fields.Char(string='Direccion')
 
@@ -35,8 +35,14 @@ class productos(models.Model):
     _description = 'Define los atributos'
 
     #Atributos
-    codProd = fields.Char(string='Codigo')
+    codProd = fields.Char(string='Codigo', required=True)
     nombreProd = fields.Char(string='Nombre del producto')
     tipoProd = fields.Selection(string='Tipo de producto', selection=[('a','fresco'),('b','congelado'),('c','enlatado'),('d','empaquetado')], help='Estado del alimento')
     cantidadProd = fields.Integer(string='Cantidad')
     descripcionProd = fields.Text(string='Descripcion del producto')
+
+    @api.constrains('cantidadProd')
+	def _checkEdad(self):
+		for productos in self:
+			if(productos.cantidadProd < 1):
+				raise exceptions.ValidationError("La cantidad no puede ser menor inferior a 1")

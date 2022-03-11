@@ -30,10 +30,28 @@ class proveedores(models.Model):
     telefonoSupp = fields.Char(string='Telefono')
     emailSupp = fields.Char(string='Email')
 
+
+    @api.constrains('dniSupp')
+	def _checkDNI(self):
+		for proveedores in self:
+			if(len(proveedores.dniSupp) > 9):
+				raise exceptions.ValidationError("El DNI no puede ser superior a 9 caracteres")
+			if(len(proveedores.dniSupp) < 9):
+				raise exceptions.ValidationError("El DNI no puede tener menos de 9 caracteres")
+
 class repartos(models.Model):
     _name = 'proveedores.repartos'
     _description = 'Define los atributos'
 
     #Atributos
-    cod = fields.Char(string='Codigo')
+    cod = fields.Char(string='Codigo', required=True)
     fecha = fields.Date(string='Fecha de reparto', default = fields.date.today())
+
+    @api.constrains('fecha')
+	def _checkFecha(self):
+		hoy = date.today()
+		for proyecto in self:
+			repartos.fecha
+			dias = relativedelta(hoy, repartos.fecha).days
+			if(dias > 0):
+				raise exceptions.ValidationError("Error, la fecha del reparto no puede ser anterior a la fecha actual")
