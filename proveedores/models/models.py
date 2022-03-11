@@ -35,7 +35,7 @@ class proveedores(models.Model):
 	def _checkDNI(self):
 		for proveedores in self:
 			if(len(proveedores.dniSupp) > 9):
-				raise exceptions.ValidationError("El DNI no puede ser superior a 9 caracteres")
+			    raise exceptions.ValidationError("El DNI no puede ser superior a 9 caracteres")
 			if(len(proveedores.dniSupp) < 9):
 				raise exceptions.ValidationError("El DNI no puede tener menos de 9 caracteres")
 
