@@ -56,5 +56,18 @@
     <menuitem name="Server to list" id="almacenes" parent="almacenes.menu_2"
               action="almacenes.action_server"/>
 -->
+
+    <record model="ir.ui.view" id="almacenes.almacenes_list_view">
+      <field name="name">almacenes.almacenes.view.tree</field>
+      <field name="model">almacenes.almacenes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="codAlm"/>
+          <field name="nombreAlm"/>
+          <field name="direccionAlm"/>
+        </tree>
+      </field>
+    </record>
+
   </data>
 </odoo>

@@ -25,6 +25,7 @@ class almacenes(models.Model):
     _description = 'Define los atributos'
 
     #Atributos
+    codAlm = fields.Char(string='Codigo')
     nombreAlm = fields.Char(string='Nombre del almacen')
     direccionAlm = fields.Char(string='Direccion')
 
@@ -34,6 +35,7 @@ class productos(models.Model):
     _description = 'Define los atributos'
 
     #Atributos
+    codProd = fields.Char(string='Codigo')
     nombreProd = fields.Char(string='Nombre del producto')
     tipoProd = fields.Selection(string='Tipo de producto', selection=[('a','fresco'),('b','congelado'),('c','enlatado'),('d','empaquetado')], help='Estado del alimento')
     cantidadProd = fields.Integer(string='Cantidad')
