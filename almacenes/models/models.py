@@ -41,8 +41,8 @@ class productos(models.Model):
     cantidadProd = fields.Integer(string='Cantidad')
     descripcionProd = fields.Text(string='Descripcion del producto')
 
-    #@api.constrains('cantidadProd')
-	#def _checkCantidad(self):
-	#	for productos in self:
-	#		if(productos.cantidadProd < 1):
-	#			raise exceptions.ValidationError("La cantidad no puede ser menor inferior a 1")
+@api.constrains('cantidadProd')
+def _checkCantidad(self):
+    for productos in self:
+		if(productos.cantidadProd < 1):
+			raise exceptions.ValidationError("La cantidad no puede ser menor inferior a 1")
