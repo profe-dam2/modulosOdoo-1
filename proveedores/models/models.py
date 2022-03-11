@@ -32,7 +32,7 @@ class proveedores(models.Model):
 
 
     @api.constrains('dniSupp')
-	def _checkDNI(self):
+	def _checkdni(self):
 		for proveedores in self:
 			if(len(proveedores.dniSupp) > 9):
 			    raise exceptions.ValidationError("El DNI no puede ser superior a 9 caracteres")
