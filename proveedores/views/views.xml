@@ -56,5 +56,48 @@
     <menuitem name="Server to list" id="proveedores" parent="proveedores.menu_2"
               action="proveedores.action_server"/>
 -->
+
+    <record model="ir.ui.view" id="proveedores.proveedores_list_view">
+      <field name="name">Proveedores.proveedores.view.tree</field>
+      <field name="model">proveedores.proveedores</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="dniSupp"/>
+          <field name="nombreSupp"/>
+          <field name="telefonoSupp"/>
+          <field name="emailSupp"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="proveedores.repartos_list_view">
+      <field name="name">Proveedores.repartos.view.tree</field>
+      <field name="model">proveedores.repartos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="cod"/>
+          <field name="fecha"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="proveedores.proveedores_action_window">
+      <field name="name">Proveedores</field>
+      <field name="res_model">proveedores.proveedores</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="proveedores.repartos_action_window">
+      <field name="name">Repartos</field>
+      <field name="res_model">proveedores.repartos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Proveedores" id="proveedores.menu_root"/>
+
+    <menuitem name="Proveedores" id="proveedores.proveedores_menu" parent="proveedores.menu_root" action="proveedores.proveedores_action_window"/>
+    <menuitem name="Repartos" id="proveedores.repartos_menu" parent="proveedores.menu_root" action="proveedores.repartos_action_window"/>
+
   </data>
 </odoo>
