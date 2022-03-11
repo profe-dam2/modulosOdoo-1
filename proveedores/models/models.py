@@ -31,13 +31,13 @@ class proveedores(models.Model):
     emailSupp = fields.Char(string='Email')
 
 
-    @api.constrains('dniSupp')
-	def _checkdni(self):
-		for proveedores in self:
-			if(len(proveedores.dniSupp) > 9):
-			    raise exceptions.ValidationError("El DNI no puede ser superior a 9 caracteres")
-			if(len(proveedores.dniSupp) < 9):
-				raise exceptions.ValidationError("El DNI no puede tener menos de 9 caracteres")
+    #@api.constrains('dniSupp')
+	#def _checkdni(self):
+	#	for proveedores in self:
+	#		if(len(proveedores.dniSupp) > 9):
+	#		    raise exceptions.ValidationError("El DNI no puede ser superior a 9 caracteres")
+	#		if(len(proveedores.dniSupp) < 9):
+	#			raise exceptions.ValidationError("El DNI no puede tener menos de 9 caracteres")
 
 class repartos(models.Model):
     _name = 'proveedores.repartos'
