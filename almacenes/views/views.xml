@@ -56,7 +56,7 @@
     <menuitem name="Server to list" id="almacenes" parent="almacenes.menu_2"
               action="almacenes.action_server"/>
 -->
-
+    <!--vista almacenes-->
     <record model="ir.ui.view" id="almacenes.almacenes_list_view">
       <field name="name">almacenes.almacenes.view.tree</field>
       <field name="model">almacenes.almacenes</field>
@@ -68,6 +68,38 @@
         </tree>
       </field>
     </record>
+
+
+    <record model="ir.ui.view" id="almacenes.productos_list_view">
+      <field name="name">almacenes.productos.view.tree</field>
+      <field name="model">almacenes.productos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="codProd"/>
+          <field name="nombreProd"/>
+          <field name="tipoProd"/>
+          <field name="cantidadProd"/>
+          <field name="descripcionProd"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="almacenes.almacenes_action_window">
+      <field name="name">Almacenes</field>
+      <field name="res_model">almacenes.almacenes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="almacenes.productos_action_window">
+      <field name="name">Productos</field>
+      <field name="res_model">almacenes.productos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Almacenes" id="almacenes.menu_root"/>
+
+    <menuitem name="Almacenes" id="almacenes.almacenes_menu" parent="almacenes.menu_root" action="almacenes.almacenes_action_window"/>
+    <menuitem name="Productos" id="almacenes.productos_menu" parent="almacenes.menu_root" action="almacenes.productos_action_window"/>
 
   </data>
 </odoo>
