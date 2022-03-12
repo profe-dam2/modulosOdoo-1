@@ -60,3 +60,4 @@ class repartos(models.Model):
     
     #Relacion entre tablas
     proveedor_id = fields.Many2one('proveedores.proveedores', string='Proveedor')
+    producto_codRe = fields.One2many('almacenes.productos', string='Productos')
