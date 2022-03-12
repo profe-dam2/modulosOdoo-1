@@ -57,9 +57,9 @@
               action="almacenes.action_server"/>
 -->
     <!--vista almacenes-->
-    <record model="ir.ui.view" id="almacenes.almacenes_list_view">
-      <field name="name">almacenes.almacenes.view.tree</field>
-      <field name="model">almacenes.almacenes</field>
+    <record model="ir.ui.view" id="almacenes.almacen_list_view">
+      <field name="name">almacenes.almacen.view.tree</field>
+      <field name="model">almacenes.almacen</field>
       <field name="arch" type="xml">
         <tree>
           <field name="codAlm"/>
@@ -84,9 +84,9 @@
       </field>
     </record>
 
-    <record model="ir.actions.act_window" id="almacenes.almacenes_action_window">
+    <record model="ir.actions.act_window" id="almacenes.almacen_action_window">
       <field name="name">Almacenes</field>
-      <field name="res_model">almacenes.almacenes</field>
+      <field name="res_model">almacenes.almacen</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -98,7 +98,7 @@
 
     <menuitem name="Almacenes" id="almacenes.menu_root"/>
 
-    <menuitem name="Almacenes" id="almacenes.almacenes_menu" parent="almacenes.menu_root" action="almacenes.almacenes_action_window"/>
+    <menuitem name="Almacenes" id="almacenes.almacenes_menu" parent="almacenes.menu_root" action="almacenes.almacen_action_window"/>
     <menuitem name="Productos" id="almacenes.productos_menu" parent="almacenes.menu_root" action="almacenes.productos_action_window"/>
 
   </data>

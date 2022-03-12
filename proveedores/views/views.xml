@@ -57,9 +57,9 @@
               action="proveedores.action_server"/>
 -->
 
-    <record model="ir.ui.view" id="proveedores.proveedores_list_view">
-      <field name="name">Proveedores.proveedores.view.tree</field>
-      <field name="model">proveedores.proveedores</field>
+    <record model="ir.ui.view" id="proveedores.proveedor_list_view">
+      <field name="name">Proveedores.proveedor.view.tree</field>
+      <field name="model">proveedores.proveedor</field>
       <field name="arch" type="xml">
         <tree>
           <field name="dniSupp"/>
@@ -81,9 +81,9 @@
       </field>
     </record>
 
-    <record model="ir.actions.act_window" id="proveedores.proveedores_action_window">
+    <record model="ir.actions.act_window" id="proveedores.proveedor_action_window">
       <field name="name">Proveedores</field>
-      <field name="res_model">proveedores.proveedores</field>
+      <field name="res_model">proveedores.proveedor</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -96,7 +96,7 @@
 
     <menuitem name="Proveedores" id="proveedores.menu_root"/>
 
-    <menuitem name="Proveedores" id="proveedores.proveedores_menu" parent="proveedores.menu_root" action="proveedores.proveedores_action_window"/>
+    <menuitem name="Proveedores" id="proveedores.proveedores_menu" parent="proveedores.menu_root" action="proveedores.proveedor_action_window"/>
     <menuitem name="Repartos" id="proveedores.repartos_menu" parent="proveedores.menu_root" action="proveedores.repartos_action_window"/>
 
   </data>
