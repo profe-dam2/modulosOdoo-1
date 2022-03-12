@@ -62,4 +62,4 @@ class repartos(models.Model):
     proveedor_id = fields.Many2one('proveedores.proveedor', string='Proveedor')
     producto_rep = fields.One2many('almacenes.productos','reparto_pro', string='Productos')
     #alm_rep = fields.Many2one('almacenes.almacen', string='Almacenes')
-    alm_rep = fields.Many2one('almacenes.almacen' string='Almacenes')
+    alm_rep = fields.Many2one('almacenes.almacen', string='Almacenes')
