@@ -10,7 +10,7 @@
         <field name="binding_type">report</field>
     </record>
 
-    <template id="informeAlmacen">
+    <template id="almacen_report_view">
 
         <t t-call="web.html_container">
             <t t-foreach="docs" t-as="almacen">
