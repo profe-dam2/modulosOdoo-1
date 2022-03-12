@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+		<record model="ir.module.category" id="proveedores.module_category_proveedores">
+			<field name="name">Proveedores</field>
+			<field name="description">Gestion y asignacion de proveedores y repartos</field>
+		</record>
+
+		<record model="res.groups" id="group_proveedores_roleUsu">
+			<field name="name">roleUsu</field>
+			<field name="category_id" ref="proveedores.module_category_proveedores"/>
+			<field name="comment">roleUsu</field>
+		</record>
+
+		<record model="res.groups" id="group_proveedores_roleAdmin">
+			<field name="name">roleAdmin</field>
+			<field name="category_id" ref="proveedores.module_category_proveedores"/>
+			<field name="comment">roleAdmin</field>
+			<field name="implied_ids" eval="[(4, ref('group_proveedores_roleUsu'))]"/>
+			<field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+		</record>
+	</data>
+</odoo>
