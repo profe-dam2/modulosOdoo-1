@@ -52,5 +52,5 @@ class repartos(models.Model):
     	for proyecto in self:
     		repartos.fecha
     		dias = relativedelta(hoy, repartos.fecha).days
-    		if(dias > hoy):
+    		if(dias > 0):
     			raise exceptions.ValidationError("Error, la fecha del reparto no puede ser anterior a la fecha actual")

@@ -29,6 +29,9 @@ class almacenes(models.Model):
     nombreAlm = fields.Char(string='Nombre del almacen')
     direccionAlm = fields.Char(string='Direccion')
 
+    #Relacion entre tablas
+    productos_codProds = fields.Many2many('almacenes.productos', string='Productos')
+
 
 class productos(models.Model):
     _name = 'almacenes.productos'
@@ -46,3 +49,6 @@ class productos(models.Model):
         for productos in self:
             if(productos.cantidadProd < 1):
                 raise exceptions.ValidationError("La cantidad no puede ser menor inferior a 1")
+    
+    #Relacion entre tablas
+    almacenes_codAlms = fields.Many2many('almacenes.almacenes', string='Almacenes')
