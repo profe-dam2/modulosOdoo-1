@@ -52,7 +52,7 @@ class repartos(models.Model):
     @api.constrains('fecha')
     def _checkFecha(self):
     	hoy = date.today()
-    	for proyecto in self:
+    	for repartos in self:
     		repartos.fecha
     		dias = relativedelta(hoy, repartos.fecha).days
     		if(dias > 0):
