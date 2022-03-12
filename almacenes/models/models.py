@@ -52,3 +52,4 @@ class productos(models.Model):
     
     #Relacion entre tablas
     almacenes_codAlms = fields.Many2many('almacenes.almacenes', string='Almacenes')
+    reparto_pro = fields.Many2many('proveedores.repartos', string='Repartos')
