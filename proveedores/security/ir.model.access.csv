@@ -1,5 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_proveedores_proveedor_roleUsu,proveedores.proveedor.roleUsu,model_proveedores_proveedor,proveedores.group_proveedores_roleUsu,1,0,0,0
 access_proveedores_proveedor_roleAdmin,proveedores.proveedor.roleAdmin,model_proveedores_proveedor,proveedores.group_proveedores_roleAdmin,1,1,1,1
-access_proveedores_repartos_roleUsu,proveedores.repartos.roleUsu,model_proveedores_repartos,proveedores.group_repartos_roleUsu,1,0,0,0
-access_proveedores_repartos_roleAdmin,proveedores.repartos.roleAdmin,model_proveedores_repartos,proveedores.group_repartos_roleAdmin,1,1,1,1
+access_proveedores_repartos_roleUsu,proveedores.repartos.roleUsu,model_proveedores_repartos,proveedores.group_proveedores_roleUsu,1,0,0,0
+access_proveedores_repartos_roleAdmin,proveedores.repartos.roleAdmin,model_proveedores_repartos,proveedores.group_proveedores_roleAdmin,1,1,1,1
