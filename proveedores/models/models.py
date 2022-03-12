@@ -44,7 +44,7 @@ class repartos(models.Model):
 
     #Atributos
     cod = fields.Char(string='Codigo', required=True)
-    fecha = fields.Date(string='Fecha de reparto', default = fields.date.today())
+    fecha = fields.Date(string='Fecha de reparto', required=True)
 
     @api.constrains('fecha')
     def _checkFecha(self):
