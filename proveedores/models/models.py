@@ -16,7 +16,7 @@
 #     def _value_pc(self):
 #         for record in self:
 #             record.value2 = float(record.value) / 100
-from odoo import models ,fields, api, exceptions
+from odoo import models, fields, api, exceptions
 from datetime import date
 from dateutil.relativedelta import *
 
@@ -29,10 +29,9 @@ class proveedores(models.Model):
     nombreSupp = fields.Char(string='Nombre del proveedor')
     telefonoSupp = fields.Char(string='Telefono')
     emailSupp = fields.Char(string='Email')
-
-
+    
     @api.constrains('dniSupp')
-	def _checkdni(self):
+    def _checkdni(self):
 		for proveedores in self:
 			if(len(proveedores.dniSupp) > 9):
 			    raise exceptions.ValidationError("El DNI no puede ser superior a 9 caracteres")
