@@ -20,8 +20,8 @@ from odoo import models ,fields, api, exceptions
 from datetime import date
 from dateutil.relativedelta import *
 
-class almacenes(models.Model):
-    _name = 'almacenes.almacenes'
+class almacen(models.Model):
+    _name = 'almacenes.almacen'
     _description = 'Define los atributos'
 
     #Atributos
@@ -52,5 +52,5 @@ class productos(models.Model):
                 raise exceptions.ValidationError("La cantidad no puede ser menor inferior a 1")
     
     #Relacion entre tablas
-    almacenes_codAlms = fields.Many2many('almacenes.almacenes', string='Almacenes')
+    almacenes_codAlms = fields.Many2many('almacenes.almacen', string='Almacenes')
     reparto_pro = fields.Many2one('proveedores.repartos', string='Repartos')

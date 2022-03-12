@@ -20,8 +20,8 @@ from odoo import models, fields, api, exceptions
 from datetime import date
 from dateutil.relativedelta import *
 
-class proveedores(models.Model):
-    _name = 'proveedores.proveedores'
+class proveedor(models.Model):
+    _name = 'proveedores.proveedor'
     _description = 'Define los atributos'
 
     #Atributos
@@ -59,6 +59,6 @@ class repartos(models.Model):
     			raise exceptions.ValidationError("Error, la fecha del reparto no puede ser anterior a la fecha actual")
     
     #Relacion entre tablas
-    proveedor_id = fields.Many2one('proveedores.proveedores', string='Proveedor')
+    proveedor_id = fields.Many2one('proveedores.proveedor', string='Proveedor')
     producto_rep = fields.One2many('almacenes.productos','reparto_pro', string='Productos')
-    almacen_rep = fields.Many2one('almacenes.almacenes', string='Almacenes')
+    almacen_rep = fields.Many2one('almacenes.almacen', string='Almacenes')
