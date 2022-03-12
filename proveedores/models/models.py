@@ -37,6 +37,9 @@ class proveedores(models.Model):
                 raise exceptions.ValidationError("El DNI no puede ser superior a 9 caracteres")
             if(len(proveedores.dniSupp) < 9):
                 raise exceptions.ValidationError("El DNI no puede tener menos de 9 caracteres")
+    
+    #Relacion entre tablas
+    reparto_cod = fields.One2many('proveedores.repartos','proveedor_id', string='Repartos')
 
 class repartos(models.Model):
     _name = 'proveedores.repartos'
@@ -54,3 +57,6 @@ class repartos(models.Model):
     		dias = relativedelta(hoy, repartos.fecha).days
     		if(dias > 0):
     			raise exceptions.ValidationError("Error, la fecha del reparto no puede ser anterior a la fecha actual")
+    
+    #Relacion entre tablas
+    proveedor_id = fields.Many2one('proveedores.proveedores', string='Proveedor')
