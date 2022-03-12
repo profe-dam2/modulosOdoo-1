@@ -28,6 +28,7 @@
         'views/views.xml',
         'views/templates.xml',
         'security/rolAlmacen.xml',
+        'report/informeAlmacen.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
