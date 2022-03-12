@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_almacenes_almacenes,almacenes.almacenes,model_almacenes_almacenes,base.group_user,1,1,1,1
+access_almacenes_productos_roleUsu,almacenes.productos.roleUsu,model_almacenes_productos,almacenes.group_almacenes_roleUsu,1,0,0,0
+access_almacenes_productos_roleAdmin,almacenes.productos.roleUsu,model_almacenes_productos,almacenes.group_almacenes_roleAdmin,1,1,1,1
+access_almacenes_almacen_roleUsu,almacenes.almacen.roleUsu,model_almacenes_almacen,almacenes.group_almacenes_roleUsu,1,0,0,0
+access_almacenes_almacen_roleAdmin,almacenes.almacen.roleAdmin,model_almacenes_almacen,almacenes.group_almacenes_roleAdmin,1,1,1,1

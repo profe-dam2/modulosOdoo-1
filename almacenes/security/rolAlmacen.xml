@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+	<data>
+		<record model="ir.module.category" id="almacenes.module_category_almacenes">
+			<field name="name">Almacenes</field>
+			<field name="description">Gestion y asignacion de almacenes y productos</field>
+		</record>
+
+		<record model="res.groups" id="group_almacenes_roleUsu">
+			<field name="name">roleUsu</field>
+			<field name="category_id" ref="almacenes.module_category_almacenes"/>
+			<field name="comment">roleUsu</field>
+		</record>
+
+		<record model="res.groups" id="group_almacenes_roleAdmin">
+			<field name="name">roleAdmin</field>
+			<field name="category_id" ref="proyectos.module_category_almacenes"/>
+			<field name="comment">roleAdmin</field>
+			<field name="implied_ids" eval="[(4, ref('group_proyectos_role2'))]"/>
+			<field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+		</record>
+	</data>
+</odoo>
