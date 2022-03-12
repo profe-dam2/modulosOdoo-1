@@ -15,7 +15,7 @@
 
 		<record model="res.groups" id="group_almacenes_roleAdmin">
 			<field name="name">roleAdmin</field>
-			<field name="category_id" ref="proyectos.module_category_almacenes"/>
+			<field name="category_id" ref="almacenes.module_category_almacenes"/>
 			<field name="comment">roleAdmin</field>
 			<field name="implied_ids" eval="[(4, ref('group_proyectos_role2'))]"/>
 			<field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
