@@ -44,7 +44,7 @@ class repartos(models.Model):
 
     #Atributos
     cod = fields.Char(string='Codigo', required=True)
-    fecha = fields.Date(string='Fecha de reparto', required=True)
+    fecha = fields.Date(string='Fecha de reparto', default = fields.date.today())
 
     @api.constrains('fecha')
     def _checkFecha(self):
@@ -52,5 +52,5 @@ class repartos(models.Model):
     	for proyecto in self:
     		repartos.fecha
     		dias = relativedelta(hoy, repartos.fecha).days
-    		if(dias > 0):
+    		if(dias > hoy):
     			raise exceptions.ValidationError("Error, la fecha del reparto no puede ser anterior a la fecha actual")
