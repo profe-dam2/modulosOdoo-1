@@ -140,6 +140,7 @@
     </record>
 
     <menuitem name="Proveedores" id="proveedores.menu_root"/>
+    <menuitem name="Proveedores" id="proveedores.menu_root" web_icon="proveedores.images/proveedor.png"/>
 
     <menuitem name="Proveedores" id="proveedores.proveedores_menu" parent="proveedores.menu_root" action="proveedores.proveedor_action_window"/>
     <menuitem name="Repartos" id="proveedores.repartos_menu" parent="proveedores.menu_root" action="proveedores.repartos_action_window"/>

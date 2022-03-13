@@ -145,6 +145,7 @@
     </record>
 
     <menuitem name="Almacenes" id="almacenes.menu_root"/>
+    <menuitem name="Almacenes" id="almacenes.menu_root" web_icon="almacenes.images/almacen.png"/>
 
     <menuitem name="Almacenes" id="almacenes.almacenes_menu" parent="almacenes.menu_root" action="almacenes.almacen_action_window"/>
     <menuitem name="Productos" id="almacenes.productos_menu" parent="almacenes.menu_root" action="almacenes.productos_action_window"/>
