@@ -69,6 +69,19 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="almacenes.productos_list_view">
+      <field name="name">almacenes.productos.view.tree</field>
+      <field name="model">almacenes.productos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="codProd"/>
+          <field name="nombreProd"/>
+          <field name="tipoProd"/>
+          <field name="cantidadProd"/>
+        </tree>
+      </field>
+    </record>
+
     <record model="ir.ui.view" id="almacenes.productos_view">
       <field name="name">almacenes.productos.view.tree</field>
       <field name="model">almacenes.productos</field>
