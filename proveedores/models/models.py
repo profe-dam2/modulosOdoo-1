@@ -39,7 +39,7 @@ class proveedor(models.Model):
                 raise exceptions.ValidationError("El DNI no puede tener menos de 9 caracteres")
     
     #Relacion entre tablas
-    reparto_cod = fields.One2many('proveedores.repartos','proveedor_id', string='Repartos')
+    reparto_cod = fields.Many2many('proveedores.repartos', string='Repartos')
 
     def name_get(self):
         listaProveedores = []
@@ -72,6 +72,6 @@ class repartos(models.Model):
                 raise exceptions.ValidationError("Error, la fecha del reparto no puede ser anterior a la fecha actual")
     
     #Relacion entre tablas
-    proveedor_id = fields.Many2one('proveedores.proveedor', string='Proveedor')
+    proveedor_id = fields.Many2one('proveedores.proveedor', 'reparto_cod')
     producto_rep = fields.Many2one('almacenes.productos', 'reparto_producto')
     alm_rep = fields.Many2one('almacenes.almacen', 'nombre_almacen')
