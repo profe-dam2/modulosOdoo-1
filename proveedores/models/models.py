@@ -73,5 +73,5 @@ class repartos(models.Model):
     
     #Relacion entre tablas
     proveedor_id = fields.Many2one('proveedores.proveedor', string='Proveedor')
-    producto_rep = fields.Many2one('almacenes.productos', 'reparto_producto')
-    alm_rep = fields.Many2one('almacenes.almacen', 'nombre_almacen')
+    producto_rep = fields.Many2one('almacenes.productos', string='Productos')
+    alm_rep = fields.Many2one('almacenes.almacen', string='Almacen')
