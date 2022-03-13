@@ -49,21 +49,21 @@ class repartos(models.Model):
     cod = fields.Char(string='Codigo', required=True)
     fecha = fields.Date(string='Fecha de reparto', default = fields.date.today(), required=True)
     diasRep = fields.Integer(string='Dias hasta el reparto', compute='_getDias')
-	
-	@api.depends('fecha')
-	def _getDias(self):
-		hoy = date.today()
-		for repartos in self:
-			repartos.diasRep = relativedelta(hoy, repartos.fecha).days
+    
+    @api.depends('fecha')
+    def _getDias(self):
+        hoy = date.today()
+        for repartos in self:
+            repartos.diasRep = relativedelta(hoy, repartos.fecha).days
 
     @api.constrains('fecha')
     def _checkFecha(self):
-    	hoy = date.today()
-    	for repartos in self:
-    		repartos.fecha
-    		dias = relativedelta(hoy, repartos.fecha).days
-    		if(dias > 0):
-    			raise exceptions.ValidationError("Error, la fecha del reparto no puede ser anterior a la fecha actual")
+        hoy = date.today()
+        for repartos in self:
+            repartos.fecha
+            dias = relativedelta(hoy, repartos.fecha).days
+            if(dias > 0):
+                raise exceptions.ValidationError("Error, la fecha del reparto no puede ser anterior a la fecha actual")
     
     #Relacion entre tablas
     proveedor_id = fields.Many2one('proveedores.proveedor', string='Proveedor')
