@@ -31,7 +31,7 @@ class almacen(models.Model):
 
     #Relacion entre tablas
     productos_codProds = fields.Many2many('almacenes.productos', string='Productos')
-    id_reparto = fields.Many2one('proveedores.repartos', string='Repartos')
+    id_reparto = fields.Many2many('proveedores.repartos', string='Repartos')
 
 
 class productos(models.Model):
