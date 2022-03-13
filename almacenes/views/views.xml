@@ -106,6 +106,9 @@
                   <group>
                     <field name="almacenes_codAlms"/>
                   </group>
+                  <group>
+                    <field name="reparto_producto"/>
+                  </group>
                 </group>
               </page>
             </notebook>
