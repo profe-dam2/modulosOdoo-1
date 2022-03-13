@@ -74,35 +74,44 @@
       <field name="model">almacenes.productos</field>
       <field name="arch" type="xml">
         <form>
+          <header>
+            <field name="state" widget="statusbar"/>
+          </header>
           <sheet>
             <div class="oe_button_box">
               <BUTTONS/>
             </div>
             <group>
-              <h1>VISTA PRODUCTOS</h1>
+              <group>
+                <field name="codProd"/>
+              </group>
+              <group>
+                <field name="nombreProd"/>
+              </group>
+              <group>
+                <field name="tipoProd"/>
+              </group>
             </group>
-            <group>
-              <field name="codProd"/>
-            </group>
-            <group>
-              <field name="nombreProd"/>
-            </group>
-            <group>
-              <field name="tipoProd"/>
-            </group>
-            <group col="2">
-              <field name="cantidadProd"/>
-            </group>
-            <group col="2">
-              <field name="descripcionProd"/>
-            </group>
-            <group col="2">
-              <field name="almacenes_codAlms"/>
-            </group>
+            <notebook>
+              <page string="Pagina 2">
+                <group>
+                  <group>
+                    <field name="cantidadProd"/>
+                  </group>
+                  <group>
+                    <field name="descripcionProd"/>
+                  </group>
+                  <group>
+                    <field name="almacenes_codAlms"/>
+                  </group>
+                </group>
+              </page>
+            </notebook>
           </sheet>
         </form>
       </field>
     </record>
+    
 
 
     <record model="ir.actions.act_window" id="almacenes.almacen_action_window">
