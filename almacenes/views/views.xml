@@ -74,9 +74,6 @@
       <field name="model">almacenes.productos</field>
       <field name="arch" type="xml">
         <form>
-          <header>
-            <field name="state" widget="statusbar"/>
-          </header>
           <sheet>
             <div class="oe_button_box">
               <BUTTONS/>
