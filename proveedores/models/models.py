@@ -41,6 +41,12 @@ class proveedor(models.Model):
     #Relacion entre tablas
     reparto_cod = fields.One2many('proveedores.repartos','proveedor_id', string='Repartos')
 
+    def name_get(self):
+        listaProveedores = []
+        for proveedor in self:
+            listaProveedores.append((proveedor.dniSupp, proveedor.nombreSupp))
+        return listaProveedores
+
 class repartos(models.Model):
     _name = 'proveedores.repartos'
     _description = 'Define los atributos'
