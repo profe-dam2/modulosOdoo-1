@@ -26,8 +26,8 @@ class proveedor(models.Model):
 
     #Atributos
     dniSupp = fields.Char(string='DNI', required=True)
-    nombreSupp = fields.Char(string='Nombre del proveedor')
-    telefonoSupp = fields.Char(string='Telefono')
+    nombreSupp = fields.Char(string='Nombre del proveedor', required=True)
+    telefonoSupp = fields.Char(string='Telefono', required=True)
     emailSupp = fields.Char(string='Email')
     
     @api.constrains('dniSupp')
@@ -47,7 +47,7 @@ class repartos(models.Model):
 
     #Atributos
     cod = fields.Char(string='Codigo', required=True)
-    fecha = fields.Date(string='Fecha de reparto', default = fields.date.today())
+    fecha = fields.Date(string='Fecha de reparto', default = fields.date.today(), required=True)
 
     @api.constrains('fecha')
     def _checkFecha(self):

@@ -26,8 +26,8 @@ class almacen(models.Model):
 
     #Atributos
     codAlm = fields.Char(string='Codigo', required=True)
-    nombreAlm = fields.Char(string='Nombre del almacen')
-    direccionAlm = fields.Char(string='Direccion')
+    nombreAlm = fields.Char(string='Nombre del almacen', required=True)
+    direccionAlm = fields.Char(string='Direccion', required=True)
 
     #Relacion entre tablas
     productos_codProds = fields.Many2many('almacenes.productos', string='Productos')
@@ -40,9 +40,9 @@ class productos(models.Model):
 
     #Atributos
     codProd = fields.Char(string='Codigo', required=True)
-    nombreProd = fields.Char(string='Nombre del producto')
+    nombreProd = fields.Char(string='Nombre del producto', required=True)
     tipoProd = fields.Selection(string='Tipo de producto', selection=[('a','fresco'),('b','congelado'),('c','enlatado'),('d','empaquetado')], help='Estado del alimento')
-    cantidadProd = fields.Integer(string='Cantidad')
+    cantidadProd = fields.Integer(string='Cantidad', required=True)
     descripcionProd = fields.Text(string='Descripcion del producto')
 
     @api.constrains('cantidadProd')
