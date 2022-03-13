@@ -31,7 +31,13 @@ class almacen(models.Model):
 
     #Relacion entre tablas
     productos_codProds = fields.Many2many('almacenes.productos', string='Productos')
-    id_reparto = fields.Many2many('proveedores.repartos', string='Repartos')
+    id_almacen = fields.Many2many('proveedores.repartos', string='Repartos')
+
+    def name_get(self):
+        listaAlmacenes = []
+        for almacen in self:
+            listaAlmacenes.append((almacen.codAlm, almacen.nombreAlm))
+        return listaAlmacenes
 
 
 class productos(models.Model):
