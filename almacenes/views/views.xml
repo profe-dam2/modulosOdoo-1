@@ -96,6 +96,9 @@
                   <group>
                     <field name="descripcionProd"/>
                   </group>
+                  <group>
+                    <field name="fechaCad"/>
+                  </group>
                 </group>
               </page>
               <page string="Pagina 2">
