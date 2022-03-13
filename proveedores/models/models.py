@@ -48,6 +48,13 @@ class repartos(models.Model):
     #Atributos
     cod = fields.Char(string='Codigo', required=True)
     fecha = fields.Date(string='Fecha de reparto', default = fields.date.today(), required=True)
+    diasRep = fields.Integer(string='Dias hasta el reparto', compute='_getDias')
+	
+	@api.depends('fecha')
+	def _getDias(self):
+		hoy = date.today()
+		for repartos in self:
+			repartos.diasRep = relativedelta(hoy, repartos.fecha).days
 
     @api.constrains('fecha')
     def _checkFecha(self):
