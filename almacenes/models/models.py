@@ -44,7 +44,7 @@ class productos(models.Model):
     tipoProd = fields.Selection(string='Tipo de producto', selection=[('a','fresco'),('b','congelado'),('c','enlatado'),('d','empaquetado')], help='Estado del alimento')
     cantidadProd = fields.Integer(string='Cantidad', required=True)
     descripcionProd = fields.Text(string='Descripcion del producto')
-    fechaCad = fields.Date(string='Fecha de reparto', default = fields.date.today(), required=True)
+    fechaCad = fields.Date(string='Fecha de caducidad', default = fields.date.today(), required=True)
 
     @api.constrains('fechaCad')
     def _checkFecha(self):
@@ -52,7 +52,7 @@ class productos(models.Model):
     	for productos in self:
     		productos.fechaCad
     		dias = relativedelta(hoy, productos.fechaCad).days
-    		if(dias >= hoy):
+    		if(dias >= 0):
     			raise exceptions.ValidationError("Error, la fecha de caducidad no puede ser anterior a la fecha actual")
 
     @api.constrains('cantidadProd')
