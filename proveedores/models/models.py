@@ -54,7 +54,7 @@ class repartos(models.Model):
     def _getDias(self):
         hoy = date.today()
         for repartos in self:
-            repartos.diasRep = relativedelta(hoy, repartos.fecha).days
+            repartos.diasRep = relativedelta(repartos.fecha, hoy).days
 
     @api.constrains('fecha')
     def _checkFecha(self):
