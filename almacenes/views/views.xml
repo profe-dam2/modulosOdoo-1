@@ -69,7 +69,7 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="almacenes.productos_list_view">
+    <record model="ir.ui.view" id="almacenes.productos_view">
       <field name="name">almacenes.productos.view.tree</field>
       <field name="model">almacenes.productos</field>
       <field name="arch" type="xml">
