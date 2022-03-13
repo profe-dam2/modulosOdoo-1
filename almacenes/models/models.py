@@ -53,7 +53,7 @@ class productos(models.Model):
     		productos.fechaCad
     		dias = relativedelta(hoy, productos.fechaCad).days
     		if(dias >= 0):
-    			raise exceptions.ValidationError("Error, la fecha de caducidad no puede ser anterior a la fecha actual")
+    			raise exceptions.ValidationError("Error, la fecha de caducidad no puede ser igual o anterior a la fecha actual")
 
     @api.constrains('cantidadProd')
     def _checkCantidad(self):
