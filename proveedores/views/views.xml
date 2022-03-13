@@ -88,6 +88,9 @@
                   <group>
                     <field name="fecha"/>
                   </group>
+                  <group>
+                    <field name="diasRep"/>
+                  </group>
                 </group>
               </page>
               <page string="Pagina 2">
