@@ -78,26 +78,28 @@
             <div class="oe_button_box">
               <BUTTONS/>
             </div>
-            <group>
-              <group>
-                <field name="codProd"/>
-              </group>
-              <group>
-                <field name="nombreProd"/>
-              </group>
-              <group>
-                <field name="tipoProd"/>
-              </group>
-            </group>
             <notebook>
-              <page string="Pagina 2">
+              <page string="Pagina 1">
                 <group>
+                  <group>
+                    <field name="codProd"/>
+                  </group>
+                  <group>
+                    <field name="nombreProd"/>
+                  </group>
+                  <group>
+                    <field name="tipoProd"/>
+                  </group>
                   <group>
                     <field name="cantidadProd"/>
                   </group>
                   <group>
                     <field name="descripcionProd"/>
                   </group>
+                </group>
+              </page>
+              <page string="Pagina 2">
+                <group>
                   <group>
                     <field name="almacenes_codAlms"/>
                   </group>
