@@ -70,6 +70,18 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="proveedores.repartos_list_view">
+      <field name="name">proveedores.repartos.view.tree</field>
+      <field name="model">proveedores.repartos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="cod"/>
+          <field name="fecha"/>
+          <field name="diasRep"/>
+        </tree>
+      </field>
+    </record>
+
     <record model="ir.ui.view" id="proveedores.repartos_view">
       <field name="name">proveedores.repartos.view.tree</field>
       <field name="model">proveedores.repartos</field>
