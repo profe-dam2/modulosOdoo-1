@@ -96,6 +96,9 @@
             <group col="2">
               <field name="descripcionProd"/>
             </group>
+            <group col="2">
+              <field name="almacenes_codAlms"/>
+            </group>
           </sheet>
         </form>
       </field>
