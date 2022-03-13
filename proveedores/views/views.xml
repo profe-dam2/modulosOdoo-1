@@ -98,6 +98,9 @@
                   <group>
                     <field name="proveedor_id"/>
                   </group>
+                  <group>
+                    <field name="alm_rep"/>
+                  </group>
                 </group>
               </page>
             </notebook>
