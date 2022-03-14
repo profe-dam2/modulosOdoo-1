@@ -28,6 +28,7 @@
         'views/views.xml',
         'views/templates.xml',
         'security/rolProveedor.xml',
+        'report/informeProveedor.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
